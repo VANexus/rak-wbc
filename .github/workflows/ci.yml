@@ -23,6 +23,14 @@ jobs:
         with:
           required-ros-distributions: ${{ matrix.ros_distro }}
 
+      - name: Install workspace dependencies
+        shell: bash
+        run: |
+          source "/opt/ros/${ROS_DISTRO}/setup.bash"
+          rosdep init || true
+          rosdep update
+          rosdep install --from-paths src --ignore-src -r -y
+
       - name: Build
         shell: bash
         run: |

@@ -130,6 +130,7 @@ write_python_pkg() {
 '  <buildtool_depend>ament_python</buildtool_depend>
   <exec_depend>rclpy</exec_depend>
   <exec_depend>rak_wbc_msgs</exec_depend>
+  <test_depend>python3-pytest</test_depend>
   <!-- TODO: add heavy dependencies only after they are installed:
        cv_bridge, vision_msgs, moveit_py, py_trees, ... -->' \
     ament_python
