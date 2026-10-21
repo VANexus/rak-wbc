@@ -2,6 +2,8 @@
 
 2026 粤港澳大湾区具身智能机器人大赛 · 人形机器人丛林越野赛（全自主组）技术仓库。
 
+**仓库**：https://github.com/VANexus/rak-wbc
+
 - **平台**：灵犀 X2（双足人形，SDK 全开放假设）
 - **中间件**：ROS 2 Lyrical（本机 `/opt/ros/lyrical`；包结构兼容 Jazzy）
 - **控制路线**：模型基 WBC + 质心 MPC + 离线轨迹优化 + 在线参数辨识
