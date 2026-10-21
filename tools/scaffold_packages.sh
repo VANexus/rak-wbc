@@ -147,6 +147,7 @@ setup(
         ('share/' + package_name, ['package.xml']),
     ],
     install_requires=['setuptools'],
+    extras_require={'test': ['pytest']},
     zip_safe=True,
     maintainer='${MAINTAINER}',
     maintainer_email='${EMAIL}',
@@ -164,6 +165,8 @@ EOF
 script_dir=\$base/lib/${pkg}
 [install]
 install_scripts=\$base/lib/${pkg}
+[options]
+tests_require = pytest
 EOF
   touch "$dir/resource/$pkg"
   cat > "$dir/$pkg/__init__.py" <<EOF
