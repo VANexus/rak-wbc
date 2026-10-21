@@ -26,9 +26,25 @@ colcon build --packages-select rak_wbc_msgs rak_wbc_hardware
 
 source install/setup.bash
 
-# 真机（实现 hardware 之后）
-ros2 launch rak_wbc_bringup bringup.launch.py
+# 本机开发（默认 profile，不依赖真机 SDK）
+ros2 launch rak_wbc_bringup bringup.launch.py profile:=dev
+
+# 真机全系统（实现 hardware 之后）
+ros2 launch rak_wbc_bringup bringup.launch.py profile:=robot
 ```
+
+### 运行 profile
+
+| profile | 环境 | 启动内容 |
+|---|---|---|
+| `robot` | 真机 | hardware + sensors + 全自主栈 |
+| `hardware` | 真机 | ros2_control + controllers + 状态估计 |
+| `sim` | 仿真 | 仿真桥 + 全自主栈 |
+| `dev` | 本机 | mock hardware + RViz + 选中节点 |
+| `perception` | 本机/真机 | 相机/雷达 + 感知 + 地形 |
+| `replay` | 本机 | rosbag/MCAP 回放 + 选中节点 |
+
+详见 [`src/rak_wbc_bringup/README.md`](src/rak_wbc_bringup/README.md)。
 
 或直接用仓库根目录的 Makefile：
 

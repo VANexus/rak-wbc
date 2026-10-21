@@ -354,9 +354,29 @@ source install/setup.bash
 
 ### 8.3 运行
 
+`bringup.launch.py` 用 `profile` 选择运行环境与包子集；同一套代码，不同机器启动不同子集。
+
+| profile | 环境 | 启动内容 |
+|---|---|---|
+| `robot` | 真机 | hardware + sensors + 全自主栈 |
+| `hardware` | 真机 | `ros2_control` + controllers + 状态估计 |
+| `sim` | 仿真 | 仿真桥 + 全自主栈 |
+| `dev` | 本机 | mock hardware + RViz + 选中节点 |
+| `perception` | 本机/真机 | 相机/雷达 + 感知 + 地形 |
+| `replay` | 本机 | rosbag/MCAP 回放 + 选中节点 |
+
 ```bash
-# 真机
-ros2 launch rak_wbc_bringup bringup.launch.py
+# 本机开发（默认）
+ros2 launch rak_wbc_bringup bringup.launch.py profile:=dev
+
+# 真机全系统
+ros2 launch rak_wbc_bringup bringup.launch.py profile:=robot
+
+# 只上硬件
+ros2 launch rak_wbc_bringup bringup.launch.py profile:=hardware
+
+# 回放
+ros2 launch rak_wbc_bringup bringup.launch.py profile:=replay bag_path:=/path/run.mcap
 
 # 只启动描述与可视化
 ros2 launch rak_wbc_description description.launch.py

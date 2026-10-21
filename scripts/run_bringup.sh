@@ -8,4 +8,5 @@ source "/opt/ros/${ROS_DISTRO}/setup.bash"
 # shellcheck disable=SC1091
 source "${ROOT}/install/setup.bash"
 
-ros2 launch rak_wbc_bringup bringup.launch.py "$@"
+PROFILE="${PROFILE:-dev}"
+ros2 launch rak_wbc_bringup bringup.launch.py "profile:=${PROFILE}" "$@"

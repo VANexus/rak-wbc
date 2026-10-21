@@ -1,12 +1,14 @@
 SHELL := /bin/bash
 ROS_DISTRO ?= lyrical
 ROS_SETUP := /opt/ros/$(ROS_DISTRO)/setup.bash
+PROFILE ?= dev
 
-.PHONY: help build build-pkg test clean docs fmt lint precommit packages
+.PHONY: help build build-pkg run test clean docs fmt lint precommit packages
 
 help:
 	@echo "make build      - colcon build all packages (Release, symlink-install)"
 	@echo "make build-pkg PKG='a b' - build only selected packages"
+	@echo "make run        - launch bringup with PROFILE (default: dev)"
 	@echo "make test       - colcon test"
 	@echo "make clean      - remove build/install/log"
 	@echo "make fmt        - clang-format all C++ sources"
@@ -23,6 +25,10 @@ build-pkg:
 	source $(ROS_SETUP) && \
 	  colcon build --packages-select $(PKG) --symlink-install \
 	    --cmake-args -DCMAKE_BUILD_TYPE=Release
+
+run:
+	source $(ROS_SETUP) && source install/setup.bash && \
+	  ros2 launch rak_wbc_bringup bringup.launch.py profile:=$(PROFILE)
 
 test:
 	source $(ROS_SETUP) && \
