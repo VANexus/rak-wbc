@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<robot name="rak_wbc" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- TODO: import the official Lingxi X2 URDF/Xacro and add
+       inertial, visual, collision, foot contact and sensor frames. -->
+  <link name="base_link"/>
+</robot>

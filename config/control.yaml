@@ -1,0 +1,21 @@
+# Control parameters. Conservative defaults; tune on the real robot.
+control:
+  wbc:
+    frequency_hz: 1000
+    torque_margin: 0.8
+    friction_margin: 0.6
+    contact_force_ramp_ms: 150
+  mpc:
+    frequency_hz: 50
+    horizon_s: 1.0
+    com_height_m: null
+  gait:
+    default_speed_mps: 0.5
+    max_step_length_m: 0.25
+    max_step_height_m: 0.08
+    min_double_support_ratio: 0.3
+  safety:
+    max_joint_velocity_rad_s: null
+    max_joint_torque_nm: null
+    fall_pitch_threshold_deg: 60
+    fall_roll_threshold_deg: 60

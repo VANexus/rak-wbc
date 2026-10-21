@@ -1,0 +1,24 @@
+# safety
+
+看门狗超时、急停斜坡、故障分级阈值。实现后由 `rak_wbc_safety` 加载。
+
+```yaml
+watchdog:
+  control_timeout_ms: 50
+  hardware_timeout_ms: 20
+  mission_timeout_ms: 500
+
+estop:
+  freeze_ms: 0
+  unload_ramp_ms: 300
+  low_posture_ms: 1200
+  power_cut_ms: 1500
+
+faults:
+  imu_timeout_ms: 20
+  foot_force_timeout_ms: 20
+  joint_state_timeout_ms: 20
+  battery_low_percent: 20
+  joint_temp_warn_c: 70
+  joint_temp_fault_c: 85
+```

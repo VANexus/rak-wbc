@@ -1,0 +1,3 @@
+<library path="rak_wbc_hardware">
+  <!-- TODO: declare the hardware_interface::SystemInterface plugin here. -->
+</library>

@@ -1,0 +1,26 @@
+# Platform parameters. Fill from the official datasheet and on-site measurement.
+robot:
+  name: lingxi_x2
+  vendor: agibot
+  mass_kg: null
+  height_m: null
+  leg_dof: null
+  arm_dof: null
+  total_dof: null
+  battery:
+    nominal_voltage: null
+    capacity_ah: null
+    endurance_min: null
+  sensors:
+    imu: null
+    lidar: null
+    depth_camera: null
+    stereo_camera: null
+    foot_force: null
+    gnss: null
+  frames:
+    base: base_link
+    footprint: base_footprint
+    imu: imu_link
+    lidar: lidar_link
+    camera: camera_link

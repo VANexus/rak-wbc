@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>rak_wbc_localization</name>
+  <version>0.1.0</version>
+  <description>Global localization: LiDAR-inertial odometry fused with GNSS/INS.</description>
+  <maintainer email="team@example.com">rak-wbc team</maintainer>
+  <license>Proprietary</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>rclcpp</depend>
+  <depend>rclcpp_lifecycle</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+  <depend>tf2_eigen</depend>
+  <depend>eigen</depend>
+  <depend>rak_wbc_msgs</depend>
+  <!-- TODO: add heavy dependencies only after they are installed:
+       pinocchio, ocs2, crocoddyl, nav2_core, grid_map_ros, rosbag2_cpp, ... -->
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

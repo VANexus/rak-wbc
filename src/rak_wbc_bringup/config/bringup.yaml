@@ -1,0 +1,5 @@
+# Top-level bringup parameters. Package-specific parameters live in each package.
+bringup:
+  use_sim_time: false
+  autostart: true
+  log_level: info

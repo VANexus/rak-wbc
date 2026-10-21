@@ -1,0 +1,7 @@
+# Platform parameters. Fill from the official datasheet and on-site measurement.
+robot:
+  name: lingxi_x2
+  mass_kg: null
+  height_m: null
+  dof: null
+  foot_force_sensors: null

@@ -1,0 +1,54 @@
+# ROS 2 build artifacts
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# C++ / CMake
+compile_commands.json
+.cache/
+*.o
+*.so
+*.a
+
+# Data / logs
+*.bag
+*.db3
+*.mcap
+*.sqlite3
+*.csv
+!docs/**/*.csv
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local tooling / session state
+.remember/
+.extract/
+.claude/
+.codegraph/
+
+# Simulation outputs
+simulation/**/output/
+simulation/**/logs/
+simulation/**/cache/
+
+# Calibration raw data (keep derived YAML, ignore raw bags)
+hardware/raw/

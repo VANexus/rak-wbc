@@ -1,0 +1,19 @@
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.stl binary
+*.STL binary
+*.dae binary
+*.obj binary
+*.glb binary
+*.gltf binary
+*.onnx binary
+*.engine binary
+*.pt binary
+*.pth binary
+*.mcap binary
+*.bag binary

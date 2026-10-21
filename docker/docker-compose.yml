@@ -1,0 +1,17 @@
+services:
+  rak-wbc:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      args:
+        ROS_DISTRO: lyrical
+    image: rak-wbc:dev
+    init: true
+    network_mode: host
+    ipc: host
+    privileged: true          # hardware access; narrow this for production
+    volumes:
+      - ..:/workspace
+      - /dev:/dev
+    working_dir: /workspace
+    command: bash
