@@ -35,7 +35,7 @@ safety / logging
 
 - 包数量多，构建/依赖管理成本上升。
 - `bringup` 需要维护较多 launch 组合。
-- 跨越 Lyrical/Jazzy 的 API 差异需要 CI 覆盖。
+- 跨越 Lyrical/Jazzy 的 API 差异需要在目标机器上实测。
 
 ## 备选方案
 

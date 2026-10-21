@@ -17,7 +17,13 @@
 
 ```bash
 source /opt/ros/lyrical/setup.bash
+
+# 全量构建
 colcon build --symlink-install
+
+# 或只构建当前需要的包（ROS 2 按包解耦，推荐）
+colcon build --packages-select rak_wbc_msgs rak_wbc_hardware
+
 source install/setup.bash
 
 # 真机（实现 hardware 之后）
@@ -75,8 +81,7 @@ rak-wbc/
 ├── scripts/                    # bootstrap/build/test/run
 ├── tools/                      # 脚手架、标定、数据处理
 ├── tests/                      # 集成测试与场地回归
-├── docker/                     # 可复现开发环境
-└── .github/workflows/          # CI 骨架
+└── docker/                     # 可复现开发环境
 ```
 
 ---

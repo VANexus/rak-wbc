@@ -379,7 +379,7 @@ ros2 topic list
 
 | 阶段 | 交付 | 验收 |
 |---|---|---|
-| **M0 骨架** | 14 包、接口、launch、CI、文档 | `colcon build` 通过 |
+| **M0 骨架** | 14 包、接口、launch、文档 | `colcon build` 通过 |
 | **M1 SDK 打通** | `rak_wbc_hardware` 透传、`/joint_states`、`/imu`、`/foot_force` | 单关节正弦；状态码上屏 |
 | **M2 状态估计** | 浮动基座 EKF、接触/打滑 | 站立/行走时 `odom` 不漂 |
 | **M3 行走** | 官方步态或 WBC + 质心 MPC | 平地 ≥0.5 m/s，10 min 不摔 |

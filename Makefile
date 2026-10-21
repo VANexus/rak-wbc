@@ -2,10 +2,11 @@ SHELL := /bin/bash
 ROS_DISTRO ?= lyrical
 ROS_SETUP := /opt/ros/$(ROS_DISTRO)/setup.bash
 
-.PHONY: help build test clean docs fmt lint precommit packages
+.PHONY: help build build-pkg test clean docs fmt lint precommit packages
 
 help:
-	@echo "make build      - colcon build (Release, symlink-install)"
+	@echo "make build      - colcon build all packages (Release, symlink-install)"
+	@echo "make build-pkg PKG='a b' - build only selected packages"
 	@echo "make test       - colcon test"
 	@echo "make clean      - remove build/install/log"
 	@echo "make fmt        - clang-format all C++ sources"
@@ -16,6 +17,12 @@ help:
 build:
 	source $(ROS_SETUP) && \
 	  colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
+
+build-pkg:
+	@test -n "$(PKG)" || (echo "usage: make build-pkg PKG='rak_wbc_msgs rak_wbc_hardware'"; exit 2)
+	source $(ROS_SETUP) && \
+	  colcon build --packages-select $(PKG) --symlink-install \
+	    --cmake-args -DCMAKE_BUILD_TYPE=Release
 
 test:
 	source $(ROS_SETUP) && \
